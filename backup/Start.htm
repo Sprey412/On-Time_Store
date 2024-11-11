@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <!-- Указание кодировки документа -->
+    <meta charset="utf-8">
+
+    <!-- Подключение Bootstrap для стилизации -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <!-- Подключение файла со своими стилями -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <!-- Предварительная загрузка Google Fonts для ускорения -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Подключение шрифта Alegreya -->
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <!-- Фавикон (ярлык) -->
+    <link rel="icon" href="assets\images\favicon.ico">
+    
+    <!-- Заголовок страницы -->
+    <title>Магазин часов On-Time</title>
+    
+    <!-- Метатег для адаптации под мобильные устройства -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  
+  <body>
+    <!-- Контейнер для верхней части страницы (sticky для фиксации) -->
+    <div class="container-fluid sticky-top header_style">
+      <div class="container-fluid">
+        <!-- Навигационная панель Bootstrap -->
+        <nav class="navbar navbar-expand-lg">
+          <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ulnav w-100 d-flex justify-content-between align-items-center">
+              <!-- Логотип сайта -->
+              <li class="nav-item"> 
+                <a href="Start.htm" class="nav-link">
+                  <img src="assets/images/ontime_logo_calibri.png" alt="лого сайта" style="max-width: 263px; height: 70px;">
+                </a>
+              </li>
+              <!-- Навигационные ссылки -->
+              <div class="d-flex justify-content-end align-items-center flex-grow-1 textnav_regular">
+                <li class="nav-item">
+                  <a href="catalog.htm" class="nav-link toplink active">Каталог</a>
+                </li>
+                <li class="nav-item">
+                  <a href="delivery.htm" class="nav-link toplink">Доставка и оплата</a>
+                </li>
+                <li class="nav-item">
+                  <a href="contacts.htm" class="nav-link toplink">Контакты</a>
+                </li>
+              </div>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Блок с логотипом и текстом -->
+    <div class="startlogo textnav_light">
+      <img class="img_logo" src="assets/images/top_bggg.jpg" alt="logo">
+      <div class="startlogo_text">
+        <h1 class="start_text">Магазин часов<br><b>On-Time</b></h1>
+        <p class="start_text2">Известные часовые бренды Японии, Европы и России</p>
+        <div class="center-content">
+          <!-- Кнопка для перехода к покупкам -->
+          <a href="catalog.htm" class="whitelink">К покупкам</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Блок с новинками -->
+    <div class="gray-container">
+      <div class="sales-container">
+        <h2 class="sales-text">Новинки</h2>
+    
+        <!-- Витрина товаров -->
+        <div class="product-grid">
+          <!-- Карточка товара 1 -->
+          <div class="product-card">
+            <img src="assets/images/product1.jpg" alt="Товар 1" class="product-img">
+            <h3 class="product-title">Товар 1</h3>
+            <p class="product-desc">Краткое описание товара 1</p>
+            <span class="product-price">3 000 ₽</span>
+          </div>
+    
+          <!-- Карточка товара 2 -->
+          <div class="product-card">
+            <img src="assets/images/product2.jpg" alt="Товар 2" class="product-img">
+            <h3 class="product-title">Товар 2</h3>
+            <p class="product-desc">Краткое описание товара 2</p>
+            <span class="product-price">4 500 ₽</span>
+          </div>
+    
+          <!-- Карточка товара 3 -->
+          <div class="product-card">
+            <img src="assets/images/product3.jpg" alt="Товар 3" class="product-img">
+            <h3 class="product-title">Товар 3</h3>
+            <p class="product-desc">Краткое описание товара 3</p>
+            <span class="product-price">5 200 ₽</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Блок с бестселлеры -->
+    <div class="white-container">
+      <div class="sales-container">
+        <h4 class="sales-text">Бестселлеры</h4>
+    
+        <!-- Витрина товаров -->
+        <div class="product-grid">
+          <!-- Карточка товара 1 -->
+          <div class="product-card">
+            <img src="assets/images/product1.jpg" alt="Товар 1" class="product-img">
+            <h5 class="product-title">Товар 1</h5>
+            <p class="product-desc">Краткое описание товара 1</p>
+            <span class="product-price">3 000 ₽</span>
+          </div>
+    
+          <!-- Карточка товара 2 -->
+          <div class="product-card">
+            <img src="assets/images/product2.jpg" alt="Товар 2" class="product-img">
+            <h5 class="product-title">Товар 2</h5>
+            <p class="product-desc">Краткое описание товара 2</p>
+            <span class="product-price">4 500 ₽</span>
+          </div>
+    
+          <!-- Карточка товара 3 -->
+          <div class="product-card">
+            <img src="assets/images/product3.jpg" alt="Товар 3" class="product-img">
+            <h5 class="product-title">Товар 3</h5>
+            <p class="product-desc">Краткое описание товара 3</p>
+            <span class="product-price">5 200 ₽</span>
+          </div>
+
+          <!-- Карточка товара 4 -->
+          <div class="product-card">
+            <img src="assets/images/product4.jpg" alt="Товар 4" class="product-img">
+            <h5 class="product-title">Товар 4</h5>
+            <p class="product-desc">Краткое описание товара 4</p>
+            <span class="product-price">4 500 ₽</span>
+          </div>
+
+          <!-- Карточка товара 5 -->
+          <div class="product-card">
+            <img src="assets/images/product5.jpg" alt="Товар 5" class="product-img">
+            <h5 class="product-title">Товар 5</h5>
+            <p class="product-desc">Краткое описание товара 5</p>
+            <span class="product-price">4 500 ₽</span>
+          </div>
+
+          <!-- Карточка товара 6 -->
+          <div class="product-card">
+            <img src="assets/images/product6.jpg" alt="Товар 6" class="product-img">
+            <h5 class="product-title">Товар 6</h5>
+            <p class="product-desc">Краткое описание товара 6</p>
+            <span class="product-price">4 500 ₽</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Подключение скриптов Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

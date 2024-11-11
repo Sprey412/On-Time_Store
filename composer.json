@@ -1,0 +1,17 @@
+{
+    "name": "sprey/on_time",
+    "autoload": {
+        "psr-4": {
+            "Sprey\\OnTime\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sprey412",
+            "email": "spreyking@gmail.com"
+        }
+    ],
+    "require": {
+        "phpoffice/phpspreadsheet": "^3.3"
+    }
+}

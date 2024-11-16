@@ -25,7 +25,7 @@
                     </ul>
                 </div>
 
-                <!-- Социальные сети и ссылки -->
+                <!-- Социальные сети и ссылки (Пока нету) -->
                 <div class="col-md-4 col-sm-12">
                     <h4 class="footer-title">Мы в соцсетях</h4>
                     <ul class="footer-socials">

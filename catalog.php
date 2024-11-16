@@ -22,7 +22,7 @@ $filters = [
 // Инициализация параметров для запроса
 $params = [];
 $types = '';
-$sql = "SELECT * FROM products WHERE quantity > 0"; // Показываем только товары с количеством больше 0
+$sql = "SELECT * FROM products WHERE quantity > 0"; // Показывает только товары с количеством больше 0
 
 // Формирование условий поиска и фильтрации
 $conditions = [];
@@ -53,7 +53,7 @@ foreach ($filters as $key => $values) {
                 $params[] = '%' . $gender . '%';
                 $types .= 's';
 
-                // Добавляем условие для "Унисекс"
+                // Добавляет условие для "Унисекс"
                 $gender_conditions[] = "full_description LIKE ?";
                 $params[] = '%Унисекс%';
                 $types .= 's';
@@ -71,7 +71,7 @@ foreach ($filters as $key => $values) {
     }
 }
 
-// Если есть условия, добавляем их в запрос
+// Если есть условия, добавляет их в запрос
 if (!empty($conditions)) {
     $sql .= ' AND ' . implode(' AND ', $conditions);
 }
@@ -117,7 +117,7 @@ $result = $stmt->get_result();
 
     <!-- Подключение Bootstrap и других ресурсов -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <!-- Ваш собственный CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
@@ -289,9 +289,9 @@ $result = $stmt->get_result();
         <!-- Список товаров -->
         <div class="product-grid">
             <?php
-            // Проверяем, есть ли товары в базе данных
+            // Проверяет, есть ли товары в базе данных
             if ($result->num_rows > 0) {
-                // Перебираем все товары и выводим их
+                // Перебирает все товары и выводит их
                 while($row = $result->fetch_assoc()) {
                     echo '<a href="product.php?id=' . $row['product_id'] . '" class="product-card">';
                     echo '<img src="' . htmlspecialchars($row["image_url"]) . '" alt="' . htmlspecialchars($row["model"]) . '" class="product-img">';

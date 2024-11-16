@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['excel_file'])) {
 
         if (move_uploaded_file($tmpName, $destination)) {
             $message = process_excel_upload($destination, $conn);
-            unlink($destination); // Удаляем файл после обработки
+            unlink($destination); // Удаляет файл после обработки
             $_SESSION['message'] = $message;
         } else {
             $_SESSION['message'] = "Ошибка при перемещении загруженного файла.";
@@ -45,11 +45,11 @@ function process_excel_upload($file, $conn) {
         $sheet = $spreadsheet->getActiveSheet();
         $rows = $sheet->toArray();
 
-        // Перебираем строки файла Excel, начиная со второй (предполагая, что первая строка - заголовки)
+        // Перебирает строки файла Excel, начиная со второй (предполагая, что первая строка - заголовки)
         for ($i = 1; $i < count($rows); $i++) {
             $row = $rows[$i];
 
-            // Проверяем, что все необходимые ячейки заполнены
+            // Проверяет, что все необходимые ячейки заполнены
             if (!empty($row[0]) && !empty($row[1]) && !empty($row[2]) && !empty($row[3]) && !empty($row[4]) && !empty($row[5])) {
                 $model = trim($row[0]); // Модель в первом столбце
                 $short_description = trim($row[1]); // Краткое описание во втором столбце
@@ -59,7 +59,7 @@ function process_excel_upload($file, $conn) {
                 $image_url = trim($row[5]); // URL изображения в шестом столбце
                 $quantity = isset($row[6]) ? intval($row[6]) : 1; // Количество в седьмом столбце (опционально)
 
-                // Получаем brand_id по brand_name
+                // Получает brand_id по brand_name
                 $brand_stmt = $conn->prepare("SELECT brand_id FROM brands WHERE brand_name = ?");
                 $brand_stmt->bind_param("s", $brand_name);
                 $brand_stmt->execute();
@@ -68,7 +68,7 @@ function process_excel_upload($file, $conn) {
                 if ($brand_row = $brand_result->fetch_assoc()) {
                     $brand_id = $brand_row['brand_id'];
                 } else {
-                    // Если бренд не существует, добавляем его
+                    // Если бренд не существует, добавляет его
                     $insert_brand = $conn->prepare("INSERT INTO brands (brand_name) VALUES (?)");
                     $insert_brand->bind_param("s", $brand_name);
                     $insert_brand->execute();
@@ -77,7 +77,7 @@ function process_excel_upload($file, $conn) {
                 }
                 $brand_stmt->close();
 
-                // Проверяем, существует ли товар с такой же моделью
+                // Проверяет, существует ли товар с такой же моделью
                 $product_stmt = $conn->prepare("SELECT product_id, quantity FROM products WHERE model = ?");
                 $product_stmt->bind_param("s", $model);
                 $product_stmt->execute();
@@ -91,7 +91,7 @@ function process_excel_upload($file, $conn) {
                     $update_product->execute();
                     $update_product->close();
                 } else {
-                    // Товар не существует, добавляем новый
+                    // Товар не существует, добавляет новый
                     $insert_product = $conn->prepare("INSERT INTO products (model, short_description, full_description, price, brand_id, image_url, quantity) VALUES (?, ?, ?, ?, ?, ?, ?)");
                     $insert_product->bind_param("sssdisi", $model, $short_description, $full_description, $price, $brand_id, $image_url, $quantity);
                     $insert_product->execute();
@@ -100,7 +100,7 @@ function process_excel_upload($file, $conn) {
                 $product_stmt->close();
             } else {
                 // Не все поля заполнены
-                // Можно добавить запись об ошибке, но сейчас просто пропускаем
+                
                 continue;
             }
         }

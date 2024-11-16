@@ -2,10 +2,10 @@
 include 'config.php';
 session_start();
 
-// Получаем ID товара из параметра URL
+// Получает ID товара из параметра URL
 $product_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
-// Проверяем, передан ли корректный ID
+// Проверяет, передан ли корректный ID
 if ($product_id <= 0) {
     echo "Неверный ID товара.";
     exit();
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_to_cart'])) {
         $_SESSION['cart'] = [];
     }
 
-    // Проверяем, есть ли уже этот товар в корзине
+    // Проверяет, есть ли уже этот товар в корзине
     $found = false;
     foreach ($_SESSION['cart'] as &$item) {
         if ($item['product_id'] == $product['product_id']) {
@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_to_cart'])) {
 
     <!-- Подключение Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Подключение вашего собственного CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
     <style>
         /* Контейнер для изображения товара */
@@ -78,8 +78,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_to_cart'])) {
             align-self: flex-start;
         }
 
-        /* Дополнительные стили (если необходимо) */
-        /* Убедитесь, что эти стили не конфликтуют с основными стилями сайта */
+        /* Дополнительные стили */
+
     </style>
 </head>
 <body>
@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_to_cart'])) {
                 <h1><?= htmlspecialchars($product['model']) ?></h1>
                 <p><strong>Бренд:</strong> <?= htmlspecialchars($product['brand_name']) ?></p>
                 <div class="d-flex align-items-center mb-3 price-cart">
-                    <!-- Исправлено: удалён неверный атрибут color из тега <strong> -->
+                    
                     <p class="mb-0 product-price"><strong>Цена:</strong> <?= number_format($product['price'], 2, ',', ' ') ?> ₽</p>
                     <form method="POST" class="ml-4">
                         <button type="submit" name="add_to_cart" class="btn btn-success">Добавить в корзину</button>

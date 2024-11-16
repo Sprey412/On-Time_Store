@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_brand'])) {
     if (empty($brand_name)) {
         $error_message = "Название бренда не может быть пустым.";
     } else {
-        // Проверяем, существует ли бренд с таким же названием
+        // Проверяет, существует ли бренд с таким же названием
         $stmt = $conn->prepare("SELECT brand_id FROM brands WHERE brand_name = ?");
         $stmt->bind_param("s", $brand_name);
         $stmt->execute();
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_brand'])) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_brand_id'])) {
     $brand_id = intval($_POST['delete_brand_id']);
 
-    // Проверяем, связаны ли товары с этим брендом
+    // Проверяет, связаны ли товары с этим брендом
     $stmt_check = $conn->prepare("SELECT product_id FROM products WHERE brand_id = ?");
     $stmt_check->bind_param("i", $brand_id);
     $stmt_check->execute();
@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_brand_id'])) {
     exit();
 }
 
-// Получаем список брендов для отображения
+// Получает список брендов для отображения
 $brands_sql = "SELECT brand_id, brand_name FROM brands ORDER BY brand_name ASC";
 $brands_result = $conn->query($brands_sql);
 ?>

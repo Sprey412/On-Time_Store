@@ -1,5 +1,5 @@
 <?php
-// Подключение файла конфигурации (если необходимо)
+// Подключение файла конфигурации
 include 'config.php';
 ?>
 <!DOCTYPE html>
@@ -13,7 +13,7 @@ include 'config.php';
 
     <!-- Подключение Bootstrap и других ресурсов -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <!-- Ваш собственный CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
